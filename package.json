@@ -1,0 +1,50 @@
+{
+  "name": "mook",
+  "version": "0.1.0",
+  "author": "Tzahi Vidas",
+  "description": "Mook is a cross-platform Markdown book built with Electron and React",
+  "private": true,
+  "main": "public/main.js",
+  "homepage": "./",
+  "dependencies": {
+    "codemirror": "^5.29.0",
+    "electron-is-dev": "^0.3.0",
+    "install": "^0.10.1",
+    "lodash.assign": "^4.2.0",
+    "react": "^15.6.1",
+    "@skidding/react-codemirror": "^1.0.0",
+    "react-dom": "^15.6.1",
+    "react-highlight": "^0.10.0",
+    "react-markdown": "^2.5.0",
+    "react-scripts": "1.0.12",
+    "react-split-pane": "^0.1.66"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "build --em.main=build/main.js",
+    "preelectron-pack": "yarn build"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "electron": "^1.7.5",
+    "electron-builder": "^19.26.3",
+    "wait-on": "^2.0.2"
+  },
+  "build": {
+    "appId": "com.mook",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "extraResources": [
+      "README.md"
+    ]
+  }
+}
