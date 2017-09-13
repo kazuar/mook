@@ -34,7 +34,7 @@ Give it a try right now.
 
 ## How to contribute
 
-However you would like to, feel free to open issues or send pull requests.
+You can contribute in any way you want. Any help is appreciated.
 
 ## Development
 
