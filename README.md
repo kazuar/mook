@@ -4,6 +4,7 @@
   <br>
   Mook
   <br><br>
+  <a href="https://github.com/kazuar/mook"><img src="https://user-images.githubusercontent.com/422739/30395144-3ca389a4-9893-11e7-9662-113bdedcdb3e.png"></a>
 </h1>
 
 [Mook](https://github.com/kazuar/mook) is a cross-platform Markdown book built with [Electron](https://electron.atom.io/) and [React](https://facebook.github.io/react/)
@@ -31,6 +32,23 @@ Type away and see the changes on the left side of the screen.
 
 Give it a try right now.
 
+## How to contribute
+
+However you would like to, feel free to open issues or send pull requests.
+
+## Development
+
+```
+yarn install
+yarn run electron-dev
+```
+
+## Build package
+
+```
+yarn install
+yarn run electron-pack
+```
 
 ### Credits
 
