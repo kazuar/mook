@@ -52,21 +52,15 @@ class App extends Component {
 
     this.state = {
       markdownSrc: content,
-      htmlMode: 'raw'
     };
 
     this.onMarkdownChange = this.onMarkdownChange.bind(this);
-    this.onControlsChange = this.onControlsChange.bind(this);
   }
 
   onMarkdownChange(md) {
     this.setState({
       markdownSrc: md
     });
-  }
-
-  onControlsChange(mode) {
-    this.setState({ htmlMode: mode });
   }
 
   render() {
@@ -79,8 +73,6 @@ class App extends Component {
           <div className="view-pane">
             <ReactMarkdown className="result"
               source={this.state.markdownSrc}
-              skipHtml={this.state.htmlMode === 'skip'}
-              escapeHtml={this.state.htmlMode === 'escape'}
               renderers={assign({}, ReactMarkdown.renderers, {CodeBlock: CodeBlock})}
             />
           </div>
