@@ -44,7 +44,7 @@
       "buildResources": "assets"
     },
     "extraResources": [
-      "README.md"
+      "public/welcome.md"
     ]
   }
 }

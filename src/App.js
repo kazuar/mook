@@ -46,7 +46,7 @@ class App extends Component {
     });
 
     // Open the readme file
-    const file_name = path.join((isDev ? '' : window.process.resourcesPath), "README.md");
+    const file_name = path.join((isDev ? '' : window.process.resourcesPath), "public/welcome.md");
     const content = fs.readFileSync(file_name).toString();
 
 
