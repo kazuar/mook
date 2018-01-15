@@ -4,10 +4,12 @@ const app = electron.app;
 const Menu = electron.Menu;
 const dialog = electron.dialog;
 const BrowserWindow = electron.BrowserWindow;
+const ipcMain = electron.ipcMain
 
 const path = require('path');
 const url = require('url');
 const isDev = require('electron-is-dev');
+const autoUpdater = require("electron-updater").autoUpdater;
 
 let mainWindow;
 
@@ -149,8 +151,17 @@ function openFile() {
 }
 
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 900, height: 680});
+  mainWindow = new BrowserWindow({
+    width: 900,
+    height: 680
+    // webPreferences: {
+    //   nodeIntegration: false,
+    //   preload: path.join(__dirname, 'preload.js')
+    // }
+  });
   mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
+
+  autoUpdater.checkForUpdates();
 
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
@@ -177,5 +188,19 @@ app.on('activate', () => {
     createWindow();
   }
 });
+
+autoUpdater.on('update-downloaded', (info) => {
+    mainWindow.webContents.send('updateReady')
+});
+
+ipcMain.on('updateReady', function(event, text) {
+  // changes the text of the button
+  var container = document.getElementById('ready');
+  container.innerHTML = "new version ready!";
+})
+
+ipcMain.on("quitAndInstall", (event, arg) => {
+    autoUpdater.quitAndInstall();
+})
 
 exports.openFile = openFile

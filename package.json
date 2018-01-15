@@ -1,6 +1,6 @@
 {
   "name": "mook",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Tzahi Vidas",
   "description": "Mook is a cross-platform Markdown book built with Electron and React",
   "private": true,
@@ -27,7 +27,8 @@
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-pack": "build --em.main=build/main.js",
-    "preelectron-pack": "yarn build"
+    "preelectron-pack": "yarn build",
+    "ship": "build --em.main=build/main.js --mac -p always"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
