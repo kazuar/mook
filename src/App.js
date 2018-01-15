@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import assign from 'lodash.assign';
 import Editor from './editor.js';
 import CodeBlock from './code-block.js';
+import Toolbar from './toolbar.js';
 
 import logo from './logo.svg';
 import './App.css';
@@ -66,8 +67,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="toolbar">
-        </div>
+        <Toolbar/>
         <SplitPane split="vertical" defaultSize="50%">
           <div className="editor-pane">
             <Editor className="editor" value={this.state.markdownSrc} onChange={this.onMarkdownChange}/>
