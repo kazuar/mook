@@ -66,6 +66,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="toolbar">
+        </div>
         <SplitPane split="vertical" defaultSize="50%">
           <div className="editor-pane">
             <Editor className="editor" value={this.state.markdownSrc} onChange={this.onMarkdownChange}/>

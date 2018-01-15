@@ -108,3 +108,8 @@ html,body {
 .result a {
   color: #3890e0;
 }
+
+.toolbar {
+  height: 30px;
+  background-color: #353535;
+}
