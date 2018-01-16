@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import assign from 'lodash.assign';
 import Editor from './editor.js';
 import CodeBlock from './code-block.js';
+import Toolbar from './toolbar.js';
 
 import logo from './logo.svg';
 import './App.css';
@@ -49,12 +50,13 @@ class App extends Component {
     const file_name = path.join((isDev ? '' : window.process.resourcesPath), "public/welcome.md");
     const content = fs.readFileSync(file_name).toString();
 
-
     this.state = {
       markdownSrc: content,
+      splitPaneSize: "50%"
     };
 
     this.onMarkdownChange = this.onMarkdownChange.bind(this);
+    this.onViewChange = this.onViewChange.bind(this);
   }
 
   onMarkdownChange(md) {
@@ -63,10 +65,27 @@ class App extends Component {
     });
   }
 
+  onViewChange(e) {
+    switch(e) {
+      case "editor":
+        this.setState({ splitPaneSize: "100%"})
+        break;
+      case "split":
+        this.setState({ splitPaneSize: "50%"})
+        break;
+      case "view":
+        this.setState({ splitPaneSize: "0%"})
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     return (
       <div className="App">
-        <SplitPane split="vertical" defaultSize="50%">
+        <Toolbar onClick={this.onViewChange}/>
+        <SplitPane split="vertical" size={this.state.splitPaneSize}>
           <div className="editor-pane">
             <Editor className="editor" value={this.state.markdownSrc} onChange={this.onMarkdownChange}/>
           </div>

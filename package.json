@@ -7,14 +7,16 @@
   "main": "public/main.js",
   "homepage": "./",
   "dependencies": {
+    "@skidding/react-codemirror": "^1.0.0",
     "codemirror": "^5.29.0",
     "electron-is-dev": "^0.3.0",
     "install": "^0.10.1",
     "lodash.assign": "^4.2.0",
+    "prop-types": "^15.6.0",
     "react": "^15.6.1",
-    "@skidding/react-codemirror": "^1.0.0",
     "react-dom": "^15.6.1",
     "react-highlight": "^0.10.0",
+    "react-icons": "^2.2.7",
     "react-markdown": "^2.5.0",
     "react-scripts": "1.0.12",
     "react-split-pane": "^0.1.66"

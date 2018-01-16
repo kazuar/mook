@@ -108,3 +108,25 @@ html,body {
 .result a {
   color: #3890e0;
 }
+
+.toolbar {
+  height: 22px;
+  background-color: #353535;
+  border-bottom: 1px solid rgba(173, 161, 161, 0.5);
+  background-clip: padding-box;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.toolbar svg {
+    margin: 0 5px;
+}
+
+.toolbar svg:first-of-type{
+    margin-left: 0;
+}
+
+.toolbar svg:last-of-type{
+    margin-right: 0;
+}
