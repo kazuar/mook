@@ -66,15 +66,15 @@ class App extends Component {
   }
 
   onViewChange(e) {
-    switch(e.target.id) {
+    switch(e) {
       case "editor":
-        this.setState({ splitPaneSize: "0%"})
+        this.setState({ splitPaneSize: "100%"})
         break;
       case "split":
         this.setState({ splitPaneSize: "50%"})
         break;
       case "view":
-        this.setState({ splitPaneSize: "100%"})
+        this.setState({ splitPaneSize: "0%"})
         break;
       default:
         break;
