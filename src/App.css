@@ -114,4 +114,5 @@ html,body {
   background-color: #353535;
   border-bottom: 1px solid rgba(173, 161, 161, 0.5);
   background-clip: padding-box;
+  text-align: center;
 }
