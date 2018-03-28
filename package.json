@@ -26,6 +26,7 @@
     "build": "react-scripts build",
     "pre_test": "react-scripts test --env=jsdom",
     "test": "mocha",
+    "test2": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && mocha\"",
     "eject": "react-scripts eject",
     "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "electron-pack": "build --em.main=build/main.js",
