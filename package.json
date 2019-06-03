@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "electron": "^1.7.5",
+    "electron": "^4.2.3",
     "electron-builder": "^19.26.3",
     "mocha": "^5.0.5",
     "spectron": "^3.8.0",
