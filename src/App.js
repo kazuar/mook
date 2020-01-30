@@ -83,9 +83,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Toolbar onClick={this.onViewChange}/>
-        <SplitPane split="vertical" size={this.state.splitPaneSize}>
+      <div className="App" >
+        <Toolbar onClick={this.onViewChange} />
+        <div className="App-container">
+          <SplitPane split="vertical" style={{ height: 'calc(100% - 30px)'}} size={this.state.splitPaneSize}>
           <div className="editor-pane">
             <Editor className="editor" value={this.state.markdownSrc} onChange={this.onMarkdownChange}/>
           </div>
@@ -93,9 +94,10 @@ class App extends Component {
             <ReactMarkdown className="result"
               source={this.state.markdownSrc}
               renderers={assign({}, ReactMarkdown.renderers, {CodeBlock: CodeBlock})}
-            />
-          </div>
-        </SplitPane>
+              />
+            </div>
+          </SplitPane>
+        </div>
       </div>
     );
   }
