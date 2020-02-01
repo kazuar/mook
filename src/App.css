@@ -1,3 +1,9 @@
+:root {
+  /* Layout */
+  --toolbarHeight: 30px;
+}
+
+
 html,body {
   height: 100%;
   margin: 0px;
@@ -9,6 +15,8 @@ html,body {
 .App {
   /*text-align: center;*/
   height: 100%;
+  display:flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -48,7 +56,6 @@ html,body {
     -webkit-transition: all 2s ease;
     transition: all 2s ease;
 }
-
  .Resizer.horizontal {
     height: 11px;
     margin: -5px 0;
@@ -81,18 +88,20 @@ html,body {
 .Resizer.disabled:hover {
   border-color: transparent;
 }
-
 .view-pane {
   height: 100%;
   overflow-x: auto;
+  overflow-y: scroll;
 }
 
 .editor-pane {
   height: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .CodeMirror {
-  height: 100%;
+  height: calc(100% - 20px);
   padding-top: 20px;
   padding-left: 20px;
 }
@@ -110,13 +119,14 @@ html,body {
 }
 
 .toolbar {
-  height: 22px;
+  height: var(--toolbarHeight);
   background-color: #353535;
   border-bottom: 1px solid rgba(173, 161, 161, 0.5);
   background-clip: padding-box;
   text-align: center;
   padding-top: 5px;
   padding-bottom: 5px;
+  box-sizing: border-box;
 }
 
 .toolbar svg {
